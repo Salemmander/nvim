@@ -8,7 +8,7 @@ return {
         width = 30, -- Width in characters
       },
       filters = {
-        dotfiles = true, -- Show dotfiles (e.g., .gitignore)
+        dotfiles = false, -- Show dotfiles (e.g., .gitignore)
       },
       git = {
         enable = true, -- Show git status icons
