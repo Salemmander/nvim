@@ -9,6 +9,7 @@ return {
       },
       filters = {
         dotfiles = false, -- Show dotfiles (e.g., .gitignore)
+        git_ignored = false, -- Show git-ignored files
       },
       git = {
         enable = true, -- Show git status icons
