@@ -5,7 +5,7 @@ return {
     opts = {
       view = {
         side = "left", -- Sidebar on the left
-        width = {}, -- Width in characters
+        width = {}, -- Dynamic width based on longest line
       },
       filters = {
         dotfiles = false, -- Show dotfiles (e.g., .gitignore)
@@ -14,6 +14,17 @@ return {
       git = {
         enable = true, -- Show git status icons
       },
+      on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
+
+        local function opts(desc)
+          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        api.config.mappings.default_on_attach(bufnr)
+
+        vim.keymap.set("n", "<leader>c", api.tree.change_root_to_node, opts("Change Root to Directory"))
+      end,
     },
     config = function(_, opts)
       require("nvim-tree").setup(opts)
