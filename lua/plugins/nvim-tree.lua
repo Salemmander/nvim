@@ -5,7 +5,7 @@ return {
     opts = {
       view = {
         side = "left", -- Sidebar on the left
-        width = 30, -- Width in characters
+        width = {}, -- Width in characters
       },
       filters = {
         dotfiles = false, -- Show dotfiles (e.g., .gitignore)
