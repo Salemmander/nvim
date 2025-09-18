@@ -23,7 +23,7 @@ return {
 
         api.config.mappings.default_on_attach(bufnr)
 
-        vim.keymap.set("n", "<leader>c", api.tree.change_root_to_node, opts("Change Root to Directory"))
+        vim.keymap.set("n", "<leader>cd", api.tree.change_root_to_node, opts("Change Root to Directory"))
       end,
     },
     config = function(_, opts)
